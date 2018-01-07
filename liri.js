@@ -46,13 +46,25 @@ function showTweet() {
 function showSongs() {
     if (!search) {
         search = "happy";}
-    spotify.search({ type: 'track', query: search }, function(err, data) {
-        if (err) throw err;
-        console.log("Here is the track information you need\n");
-        console.log("Artist: " + data.tracks.items[0].artists[0].name);
-        console.log("Song Name: " + data);
-        });
-    };
+    spotify
+    .search({ type: 'track', query: search, limit:5 })
+    .then(function(response) {
+        var songStuff= response.tracks.items[0];
+        console.log("Here is the song information you want\n");    
+        console.log("Artist(s): " + songStuff.artists[0].name);
+        console.log("Song Name: " + songStuff.name);
+        console.log("Preview Link: " + songStuff.preview_url);
+        console.log("Album Name: " + songStuff.album.name);
+
+          })
+          .catch(function(err) {
+            console.log(err);
+          });
+        }
+    //     console.log("Here is the track information you need\n");
+    //     console.log("Artist: " + data.tracks.items[0].artists[0].name);
+    //     });
+    // };
 
 //  Movie functions to run
     function showMovies() {
