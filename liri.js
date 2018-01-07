@@ -4,6 +4,7 @@ var keys= require("./keys");
 var twitter = require('twitter');
 var spotify = require('node-spotify-api');
 var fs= require("fs");
+var request = require("request");
 
 // Set variables needed
 var spotify = new spotify(keys.spotify);
@@ -56,6 +57,15 @@ function showSongs() {
 //  Movie functions to run
     function showMovies() {
     console.log("Here is the movie information you need \n");
+    var queryUrl = "http://www.omdbapi.com/?i=tt3896198&apikey=5638896b";
+    
+request(queryUrl, function(error, response, body) {
+  // If the request is successful (i.e. if the response status code is 200)
+  if (!error && response.statusCode === 200) {
+    console.log("The movie's rating is: " + JSON.parse(body));
+    console.log(body);
+  }
+});
 };
 
 function doIt() {
