@@ -56,17 +56,20 @@ function showSongs() {
 
 //  Movie functions to run
     function showMovies() {
-    console.log("Here is the movie information you need \n");
-    var queryUrl = "http://www.omdbapi.com/?i=tt3896198&apikey=5638896b";
+    console.log("Here is the movie information you need");
+    var queryUrl= "http://www.omdbapi.com/?t=" + search + "&y=&plot=short&apikey=trilogy";
     
-request(queryUrl, function(error, response, body) {
-  // If the request is successful (i.e. if the response status code is 200)
-  if (!error && response.statusCode === 200) {
-    console.log("The movie's rating is: " + JSON.parse(body));
-    console.log(body);
-  }
-});
-};
+    request(queryUrl, function(error, response, body) {
+    var movieStuff= JSON.parse(body);
+    console.log("\n Movie Title: " + movieStuff.Title);
+    console.log("\n Year Released: " + movieStuff.Released);
+    console.log("\n IMDB Rating: " + movieStuff.Ratings[0].Value);
+    console.log("\n Rotten Tomatoes Rating: " + movieStuff.Ratings[1].Value);
+    console.log("\n Country Produced: " + movieStuff.Country);
+    console.log("\n Language: " + movieStuff.Language);
+    console.log("\n Actors: " + movieStuff.Actors);
+    console.log("\n Plot: " + movieStuff.Plot);   
+});}
 
 function doIt() {
     console.log("Here are your results \n");
