@@ -32,7 +32,7 @@ if (command === "my-tweets") {
 
 //  Twitter functions to run
 function showTweet() {
-    console.log("Here are your lastest 20 Tweets \n");
+    console.log("\nHere are your lastest 20 Tweets \n");
     var params = {screen_name: "APKQueen00", count:20};
     client.get('statuses/user_timeline', params, function(error, tweets, response) {
   if (!error) {
@@ -50,7 +50,7 @@ function showSongs() {
     .search({ type: 'track', query: search, limit:5 })
     .then(function(response) {
         var songStuff= response.tracks.items[0];
-        console.log("Here is the song information you want\n");    
+        console.log("\nHere is the song information you want\n");    
         console.log("Artist(s): " + songStuff.artists[0].name);
         console.log("Song Name: " + songStuff.name);
         console.log("Preview Link: " + songStuff.preview_url);
@@ -61,14 +61,10 @@ function showSongs() {
             console.log(err);
           });
         }
-    //     console.log("Here is the track information you need\n");
-    //     console.log("Artist: " + data.tracks.items[0].artists[0].name);
-    //     });
-    // };
 
 //  Movie functions to run
     function showMovies() {
-    console.log("Here is the movie information you need");
+    console.log("\nHere is the movie information you need");
     var queryUrl= "http://www.omdbapi.com/?t=" + search + "&y=&plot=short&apikey=trilogy";
     
     request(queryUrl, function(error, response, body) {
