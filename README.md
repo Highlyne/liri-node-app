@@ -72,5 +72,5 @@ LIRI takes in the following commands:
     * Plot of the movie.
     * Actors in the movie
 
-
+![Alt Text](https://github.com/Highlyne/liri-node-app/blob/master/images/movie.gif)
 
