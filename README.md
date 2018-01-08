@@ -49,7 +49,7 @@ LIRI takes in the following commands:
 * `my-tweets`
     -This will show your last 20 tweets and when they were created at in your terminal/bash window.
 
-![Alt Text](https://github.com/Highlyne/liri-node-app/blob/master/images/tweet.gif){:height="700px" width="400px"}
+<img src="https://github.com/Highlyne/liri-node-app/blob/master/images/tweet.gif" width="600" height="500">
 
 * `spotify-this-song`
    -This will show the following information about the song in your terminal/bash window
@@ -62,7 +62,7 @@ LIRI takes in the following commands:
      
      * The album that the song is from
 
-![Alt Text](https://github.com/Highlyne/liri-node-app/blob/master/images/spot.gif){:height="700px" width="400px"}
+<img src="https://github.com/Highlyne/liri-node-app/blob/master/images/spot.gif" width="600" height="500">
 
 * `movie-this`
   -This will output the following information to your terminal/bash window:
@@ -76,4 +76,4 @@ LIRI takes in the following commands:
     * Plot of the movie.
     * Actors in the movie
 
-<img src="https://github.com/Highlyne/liri-node-app/blob/master/images/movie.gif" width="500" height="500">
+<img src="https://github.com/Highlyne/liri-node-app/blob/master/images/movie.gif" width="600" height="500">
