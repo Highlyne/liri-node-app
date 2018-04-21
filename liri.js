@@ -79,10 +79,48 @@ function showSongs() {
     console.log("\n Plot: " + movieStuff.Plot);   
 });}
 
+// Function to run do what it says 
 function doIt() {
-    console.log("Here are your results \n");
+    // console.log("Here are your results \n");
     fs.readFile("random.txt", "utf8", function(err, data) {
     if (err) throw err;
-    console.log(data.toString());
-    });
+    
+    var dataArr = data.split(",");
+
+        if (dataArr.length === 2) {
+        pick(dataArr[0], dataArr[1]);
+        }
+        else if (dataArr.length === 1) {
+        pick(dataArr[0]);
+        }
+    })
 };
+
+// Function for determining which command is executed
+var pick = function(caseData, functionData) {
+    switch (caseData) {
+    case "my-tweets":
+    showTweet();
+      break;
+    case "spotify-this-song":
+    showSongs(functionData);
+      break;
+    case "movie-this":
+    showMovies(functionData);
+      break;
+    case "do-what-it-says":
+    doIt();
+      break;
+    default:
+      console.log("MMM, try something else...");
+    }
+  };
+  
+  // Function which takes in command line arguments and executes correct function accordingly
+  var runThis = function(argOne, argTwo) {
+    pick(argOne, argTwo);
+  };
+  
+  // MAIN PROCESS
+  // =====================================
+  runThis(process.argv[2], process.argv[3]);
